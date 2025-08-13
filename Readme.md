@@ -5,11 +5,6 @@ A simple Chrome extension built with React and TypeScript that fetches the **tit
 
 ---
 
-## 🖼 Screenshots
-
-### Popup UI
-![Popup Screenshot](path-to-your-popup-screenshot.png)
-
 ### Preview
 ![Title Screenshot](https://res.cloudinary.com/df134toxg/image/upload/v1755101524/Screenshot_2025-08-13_214035_axdnzd.png)
 
