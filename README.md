@@ -1,6 +1,6 @@
 # 🔍 LinkedIn Profile Scraper  
 
-A Chrome extension with backend support to scrape **LinkedIn profile data** (like name, headline, experience, etc.), save them into profiles, and manage them easily.  
+A Chrome extension with backend support to scrape **LinkedIn profile data** (like name, bio, connectionCount, etc.), save them into profiles, and manage them easily.  
 Built with **React (frontend)**, **Node.js + Express (backend)**, and **SQLite (Sequelize ORM)**.  
 
 ---
