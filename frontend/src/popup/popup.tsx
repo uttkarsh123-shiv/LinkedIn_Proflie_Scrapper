@@ -14,8 +14,7 @@ export default function Popup() {
     chrome.runtime.sendMessage({ action: "scrapeProfiles", profiles: urls });
   };
 
-  // Fetch saved profiles from backend
- // Popup.tsx
+
 useEffect(() => {
   const fetchProfiles = () => {
     fetch("http://localhost:5000/profiles")
@@ -26,7 +25,6 @@ useEffect(() => {
 
   fetchProfiles();
 
-  // Listen for updates
   chrome.runtime.onMessage.addListener((msg) => {
     if (msg.action === "profileSaved") {
       fetchProfiles();

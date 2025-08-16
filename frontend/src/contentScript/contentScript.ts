@@ -23,4 +23,4 @@ function scrapeProfile() {
   chrome.runtime.sendMessage({ action: "profileData", data });
 }
 
-setTimeout(scrapeProfile, 5000); 
+setTimeout(scrapeProfile, 5000);
