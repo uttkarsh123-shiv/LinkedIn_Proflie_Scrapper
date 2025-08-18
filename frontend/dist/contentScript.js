@@ -1,1 +1,32 @@
-(()=>{"use strict";setTimeout(function(){var t,o,e,n,l,i,u,d,r,c;const v=(null===(o=null===(t=document.querySelector("h1"))||void 0===t?void 0:t.textContent)||void 0===o?void 0:o.trim())||"",a=(null===(n=null===(e=document.querySelector(".pv-about__summary-text"))||void 0===e?void 0:e.textContent)||void 0===n?void 0:n.trim())||"",m=(null===(i=null===(l=document.querySelector(".text-body-medium"))||void 0===l?void 0:l.textContent)||void 0===i?void 0:i.trim())||"",s=(null===(d=null===(u=document.querySelector(".pv-top-card--list-bullet"))||void 0===u?void 0:u.textContent)||void 0===d?void 0:d.trim())||"",p=(null===(r=document.querySelector(".t-black--light"))||void 0===r?void 0:r.textContent)||"",x=parseInt(p.replace(/\D/g,""))||0,y=(null===(c=document.querySelector(".t-bold"))||void 0===c?void 0:c.textContent)||"",C=parseInt(y.replace(/\D/g,""))||0,b={name:v,url:window.location.href,about:a,bio:m,location:s,followerCount:x,connectionCount:C};chrome.runtime.sendMessage({action:"profileData",data:b})},5e3)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/*!********************************************!*\
+  !*** ./src/contentScript/contentScript.ts ***!
+  \********************************************/
+
+function scrapeProfile() {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    const name = ((_b = (_a = document.querySelector("h1")) === null || _a === void 0 ? void 0 : _a.textContent) === null || _b === void 0 ? void 0 : _b.trim()) || "";
+    const about = ((_d = (_c = document.querySelector(".pv-about__summary-text")) === null || _c === void 0 ? void 0 : _c.textContent) === null || _d === void 0 ? void 0 : _d.trim()) || "";
+    const bio = ((_f = (_e = document.querySelector(".text-body-medium")) === null || _e === void 0 ? void 0 : _e.textContent) === null || _f === void 0 ? void 0 : _f.trim()) || "";
+    const location = ((_h = (_g = document.querySelector(".pv-top-card--list-bullet")) === null || _g === void 0 ? void 0 : _g.textContent) === null || _h === void 0 ? void 0 : _h.trim()) || "";
+    const followerText = ((_j = document.querySelector(".t-black--light")) === null || _j === void 0 ? void 0 : _j.textContent) || "";
+    const followerCount = parseInt(followerText.replace(/\D/g, "")) || 0;
+    const connectionText = ((_k = document.querySelector(".t-bold")) === null || _k === void 0 ? void 0 : _k.textContent) || "";
+    const connectionCount = parseInt(connectionText.replace(/\D/g, "")) || 0;
+    const data = {
+        name,
+        url: window.location.href,
+        about,
+        bio,
+        location,
+        followerCount,
+        connectionCount,
+    };
+    chrome.runtime.sendMessage({ action: "profileData", data });
+}
+setTimeout(scrapeProfile, 5000);
+
+/******/ })()
+;
+//# sourceMappingURL=contentScript.js.map
